@@ -9,6 +9,5 @@ html {
   /* your code here */
   position: fixed;
   top: 50px;
-  left: 50%;
-  transform: translate(-50%); /* <-- Too Soon? Is this cheating lol? Better way to do this?? */
+  width: 100%;
 }
