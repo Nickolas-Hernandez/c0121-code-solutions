@@ -10,8 +10,6 @@ body {
 
 .row {
   display: flex;
-
-  /* padding: 2rem 0; */
   margin: 1rem 0;
 }
 
