@@ -1,6 +1,7 @@
 var width = 5;
 var height = 10;
 var area = width * height;
+
 console.log('Value of area: ', area);
 console.log('Type of area: ', typeof area);
 
