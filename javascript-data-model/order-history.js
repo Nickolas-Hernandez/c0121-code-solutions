@@ -12,7 +12,8 @@ var orderHistory = [
     itemsPurchased: [
       {
         productName: 'Javascript for impatient programmers',
-        authorOrSeller: 'Rauschmayer, Dr. Axel',
+        author: 'Rauschmayer, Dr. Axel',
+        productCategory: 'books',
         price: 31.55,
         returnBy: {
           month: 'September',
@@ -44,7 +45,8 @@ var orderHistory = [
     itemsPurchased: [
       {
         productName: 'The Timeless Way of Building',
-        authorOrSeller: 'Alexander, Christopher',
+        author: 'Alexander, Christopher',
+        productCategory: 'books',
         price: 41.33,
         returnBy: {
           month: 'August',
@@ -76,7 +78,7 @@ var orderHistory = [
     itemsPurchased: [
       {
         productName: 'Gamecube Controller Adapter...',
-        authorOrSeller: '',
+        productCategory: 'electronics',
         price: 15.98,
         returnBy: {
           month: 'August',
@@ -108,7 +110,7 @@ var orderHistory = [
     itemsPurchased: [
       {
         productName: 'Gamecube Controller Adapter - Super Smash Bros. Edition (Nintendo Swithc)',
-        authorOrSeller: '',
+        productCategory: 'electronics',
         price: 94.95,
         returnBy: {
           month: 'August',
@@ -118,7 +120,8 @@ var orderHistory = [
       },
       {
         productName: 'The Art of SQL',
-        authorOrSeller: 'Faroult, Stpehanie',
+        author: 'Faroult, Stpehanie',
+        productCategory: 'books',
         price: 33.99,
         returnBy: {
           month: 'August',
