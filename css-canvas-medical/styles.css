@@ -1,5 +1,5 @@
 /* Globals and Layouts */
-html {
+body {
   font-family: "Avenir", sans-serif;
 }
 
@@ -67,7 +67,7 @@ p {
 
 /* header */
 header {
-  height: 10vh;
+  height: 100px;
   border-bottom: 1px solid #e7e9ec;
 }
 
@@ -101,7 +101,7 @@ header {
 
 /* Hero Section */
 .hero-section {
-  height: 75vh;
+  height: 620px;
 }
 
 .hero-container {
@@ -144,7 +144,7 @@ header {
 
 /* Clinicians Prefer Section */
 .clinicians-prefer-section {
-  height: 60vh;
+  height: 500px;
   background-color: #fafafa;
   color: #6e6e6e;
   text-align: center;
@@ -169,7 +169,7 @@ header {
 .links-and-location-section {
   background-color: #525351;
   color: white;
-  height: 40vh;
+  height: 400px;
 }
 
 .footer-column {
