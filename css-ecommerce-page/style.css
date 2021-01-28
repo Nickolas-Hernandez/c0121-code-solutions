@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+section {
+  height: 60vh;
+}
+
+.container {
+  width: 1300px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  margin: 0.8rem 0;
+}
+
+.column-fifth {
+  width: 20%;
+  height: 100%;
+  padding: 0 0.6rem 0;
+}
+
+.image-container {
+  width: 100%;
+  height: 350px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  margin-top: 0.8rem;
+}
+
+.grey-text {
+  color: #e4e4e4;
+}
