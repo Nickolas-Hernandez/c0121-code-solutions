@@ -1,6 +1,7 @@
 /* Globals and Layouts */
 body {
   font-family: "Avenir", sans-serif;
+  color: #50514f;
 }
 
 a {
@@ -45,6 +46,10 @@ p {
 
 .column-50 {
   width: 50%;
+}
+
+.column-third {
+  width: calc(100% / 3);
 }
 
 .column-25 {
@@ -199,4 +204,176 @@ header {
   color: #6e6e6e;
   font-size: 14px;
   margin-right: 2rem;
+}
+
+/* Product Page style */
+.prod-hero-section {
+  margin-top: 5rem;
+}
+
+.product-hero {
+  background-image: url("images/product/product-header.jpg");
+}
+
+.product-hero-text {
+  padding-top: 150px;
+}
+
+.product-page-section {
+  height: 700px;
+}
+
+.grey-background {
+  background-color: #fafafa;
+  color: #6e6e6e;
+}
+
+.image-column {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-column > img {
+  width: 100%;
+}
+
+.blue-link {
+  color: #0a4265;
+  margin: 0.6rem 0;
+}
+
+.itallic-text {
+  font-family: "Tiempos Headline", serif;
+  font-style: italic;
+}
+
+.margin-reset {
+  margin: 0;
+}
+
+/* .text-right > a */
+.text-right > h2,
+.text-right > p {
+  width: 81%;
+}
+
+.text-right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.text-left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dark-grey-text {
+  color: #50514f;
+}
+
+/* Implementation page */
+.implementation-hero {
+  background-image: url("images/implementation/implementation-header.jpg");
+}
+
+.imp-hero-text {
+  padding-top: 110px;
+}
+
+.paragraph-section-heading {
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.numbered-paragraphs-section {
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.centered-column {
+  width: 54%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.paragraph-container {
+  margin: 3rem 0;
+}
+
+.big-num {
+  font: 36px;
+}
+
+.title-row {
+  margin-bottom: 1.4rem;
+}
+
+.title-row > h2,
+.title-row > h3 {
+  display: inline;
+}
+
+.title-row > h2 {
+  font-size: 36px;
+  margin-right: 10px;
+}
+
+/* About Us page */
+
+.about-hero {
+  background-image: url("images/about-us/about-us-header.jpg");
+}
+
+.padding-reset {
+  padding: 0;
+}
+
+.bold-text {
+  font-style: bold;
+}
+
+.our-team-heading {
+  font-family: "Tiempos Headline", serif;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+}
+
+.team-member-container {
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.team-image-container > img {
+  width: 100%;
+}
+
+.team-image-container {
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 180px;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-member-container > h4 {
+  margin: 0;
+  margin-top: 1.2rem;
+}
+
+.team-member-container > p {
+  margin: 0;
+  margin-top: 0.5rem;
 }
