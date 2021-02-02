@@ -14,7 +14,7 @@ html {
 }
 
 .active-container {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,9 +29,9 @@ html {
   color: white;
   box-shadow: 0 2px 5px rgb(48, 48, 48);
   position: absolute;
-  top: 10px;
-  left: 10px;
+  margin: 5px;
   cursor: pointer;
+  outline: none;
 }
 
 .modal-box {
@@ -54,4 +54,5 @@ html {
   border-radius: 5px;
   box-shadow: 0 2px 3px rgb(114, 114, 114);
   cursor: pointer;
+  outline: none;
 }
