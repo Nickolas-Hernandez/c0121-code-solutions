@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.night-mode {
+  background-color: #0d0d0d;
+}
+
+.day-mode {
+  background-color: #fff7f0;
+  transition: all 0.2s ease;
+}
+
+.light-bulb {
+  width: 300px;
+  height: 300px;
+  border-radius: 200px;
+}
+
+.dark-mode {
+  background-color: #212224;
+}
+
+.light-mode {
+  background-color: #fcf67b;
+  box-shadow: 0 0 5px 5px #fcf67b;
+  transition: all 0.1s ease;
+}
