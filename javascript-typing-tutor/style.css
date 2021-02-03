@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: 'Yusei Magic', sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span {
+  padding-bottom: 5px;
+}
+
+.current-character {
+  border-bottom: 4px solid black;
+}
+
+.correct {
+  color: rgb(0, 210, 0);
+}
+
+.incorrect {
+  color: red;
+}
+
+.play-again-container {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.active-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-box {
+  background-color: white;
+  width: 28rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.play-again-button {
+  font-size: 24px;
+  color: white;
+  padding: 0.4rem 1.6rem;
+  background-color: rgb(235, 93, 68);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 3px rgb(114, 114, 114);
+  cursor: pointer;
+  outline: none;
+}
