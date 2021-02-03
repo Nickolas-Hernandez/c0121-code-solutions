@@ -18,7 +18,7 @@ function typeTestHandler(event) {
     $characters[counter].className = 'correct';
     counter++;
     correctEntries++;
-    if (counter === 30) {
+    if (counter === $characters.length) {
       $accuracyText.textContent = accuracy(correctEntries, incorrectEntries) + '%';
       $playAgainContainer.className = 'play-again-container active-container';
       return;
@@ -32,7 +32,7 @@ function typeTestHandler(event) {
 
 function accuracy(correct, incorrect) {
   var grosscorrect = correct - incorrect;
-  var accuracyNum = (grosscorrect / 30) * 100;
+  var accuracyNum = (grosscorrect / $characters.length) * 100;
   return accuracyNum;
 }
 
