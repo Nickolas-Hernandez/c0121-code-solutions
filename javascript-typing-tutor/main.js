@@ -12,7 +12,6 @@ function typeTestHandler(event) {
     if (counter !== 0) {
       $characters[counter].className = '';
       counter--;
-      incorrectEntries++;
       $characters[counter].className = 'current-character';
     }
   } else if (event.key === char.charAt(0)) {
