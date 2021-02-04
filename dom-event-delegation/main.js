@@ -5,7 +5,7 @@ function handleTaskList(event) {
   console.log('event.target.tagName:', event.target.tagName);
   if (event.target.tagName === 'BUTTON') {
     var listItem = event.target.closest('.task-list-item');
-    console.log('ancestorElement:', listItem);
+    console.log('listItem:', listItem);
     listItem.remove();
   }
 }
