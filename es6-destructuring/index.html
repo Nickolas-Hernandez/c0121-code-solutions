@@ -6,13 +6,29 @@
   <body>
 
     <script>
-      var book1 = {
-        title: '1984',
-        author: 'Geaorge Orwell',
-        libraryID:  1234
+      const book1 = {
+        title: 'Goodnight Punpun',
+        author: 'Inio Asano',
+        libraryID:  3353
       }
+      let{
+        title,
+        author,
+        libraryID
+      } = book1;
+      console.log(`The title of the book is ${title}, the author is ${author}, and the library id is ${libraryID}`);
 
-
+      const book2 = {
+        title: 'Les Fleurs du mal',
+        author: 'Charles Baudelaire',
+        libraryID: 2345
+      }
+      let {
+        title: bookTitle,
+        author: bookAuthor,
+        libraryID: bookID,
+      } = book2;
+      console.log(`The title of the book is ${ bookTitle }, the author is ${ bookAuthor }, and the library id is ${ bookID }`)
     </script>
   </body>
 </html>
