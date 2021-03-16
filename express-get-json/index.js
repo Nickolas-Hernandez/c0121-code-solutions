@@ -24,10 +24,10 @@ const grades = {
 
 app.get('/', (req, res) => {
   const responseArray = [];
-  for(key in grades){
+  for(const key in grades){
     responseArray.push(grades[key]);
   }
-  res.send(responseArray);
+  res.json(responseArray);
 });
 
 app.listen(3000, () => {
