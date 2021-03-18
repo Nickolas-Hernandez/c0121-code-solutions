@@ -3,6 +3,7 @@ const data = require('./data.json');
 const app = express();
 app.use(express.json());
 const fs = require('fs');
+let dataJSON;
 
 app.get('/api/notes', (req, res) => {
   const notesArray = [];
@@ -27,7 +28,10 @@ app.post('/api/notes', (req, res) => {
     data.notes[data.nextId] = newEntry;
     const newEntryJSON = JSON.stringify(newEntry);
     data.nextId++;
-    writeToFile();
+    dataJSON = JSON.stringify(data, null, 2);
+    fs.writeFile('data.json', dataJSON, (err) => {
+      if(err) throw err;
+    });
     res.status(201).json(newEntry);
   }else res.status(500).json({error:'An unexpected error occured'});
 });
@@ -38,7 +42,10 @@ app.delete('/api/notes/:id', (req, res) => {
   else if(!data.notes[id]) res.status(404).json({error: `note with id ${id} not found!`});
   else if(data.notes[id]) {
     delete data.notes[id];
-    writeToFile();
+    dataJSON = JSON.stringify(data, null, 2);
+    fs.writeFile('data.json', dataJSON, (err) => {
+      if(err) throw err;
+    });
     res.status(204).send();
   }else res.status(500).json({error:'An unexpected error occured'});
 });
@@ -50,18 +57,14 @@ app.put('/api/notes/:id', (req, res) => {
   else if(!data.notes[id]) res.status(404).json({error: `note with id ${id} not found!`});
   else if(data.notes[id]) {
     data.notes[id].content = body.content;
-    writeToFile();
+    dataJSON = JSON.stringify(data, null, 2);
+    fs.writeFile('data.json', dataJSON, (err) => {
+      if(err) throw err;
+    });
     res.status(204).send();
   }else res.status(500).json({error:'An unexpected error occured'});
 });
 
-function writeToFile(){
-  const dataJSON = JSON.stringify(data, null, 2);
-  fs.writeFile( 'data.json', dataJSON, (err)=> {
-    if(err) throw err;
-    return;
-  });
-}
 
 app.listen(3000, () => {
   console.log('Listening on port 3000!');

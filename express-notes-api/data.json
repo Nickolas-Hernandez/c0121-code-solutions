@@ -1,5 +1,5 @@
 {
-  "nextId": 11,
+  "nextId": 12,
   "notes": {
     "5": {
       "id": 5,
@@ -13,9 +13,9 @@
       "id": 9,
       "content": "Inertia is a property of matter."
     },
-    "10": {
-      "content": "stinky",
-      "id": 10
+    "11": {
+      "content": "Trying to define yourself is like trying to bite your own teeth.",
+      "id": 11
     }
   }
 }
