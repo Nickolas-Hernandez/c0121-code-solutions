@@ -30,10 +30,11 @@ app.post('/api/notes', (req, res) => {
     data.nextId++;
     dataJSON = JSON.stringify(data, null, 2);
     fs.writeFile('data.json', dataJSON, (err) => {
-      if(err) throw err;
+      if(err) {
+        res.status(500).json({error:'An unexpected error occured'});
+      }else res.status(201).json(newEntry);
     });
-    res.status(201).json(newEntry);
-  }else res.status(500).json({error:'An unexpected error occured'});
+  }
 });
 
 app.delete('/api/notes/:id', (req, res) => {
@@ -44,10 +45,11 @@ app.delete('/api/notes/:id', (req, res) => {
     delete data.notes[id];
     dataJSON = JSON.stringify(data, null, 2);
     fs.writeFile('data.json', dataJSON, (err) => {
-      if(err) throw err;
+      if(err) {
+        res.status(500).json({error:'An unexpected error occured'});
+      }else res.status(200).send()
     });
-    res.status(204).send();
-  }else res.status(500).json({error:'An unexpected error occured'});
+  }
 });
 
 app.put('/api/notes/:id', (req, res) => {
@@ -59,10 +61,11 @@ app.put('/api/notes/:id', (req, res) => {
     data.notes[id].content = body.content;
     dataJSON = JSON.stringify(data, null, 2);
     fs.writeFile('data.json', dataJSON, (err) => {
-      if(err) throw err;
+      if(err) {
+        res.status(500).json({error:'An unexpected error occured'});
+      }else res.status(204).send();
     });
-    res.status(204).send();
-  }else res.status(500).json({error:'An unexpected error occured'});
+  }
 });
 
 

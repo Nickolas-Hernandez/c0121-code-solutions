@@ -1,5 +1,5 @@
 {
-  "nextId": 12,
+  "nextId": 13,
   "notes": {
     "5": {
       "id": 5,
@@ -16,6 +16,10 @@
     "11": {
       "content": "Trying to define yourself is like trying to bite your own teeth.",
       "id": 11
+    },
+    "12": {
+      "content": "To the mind that is still, the whole universe surrenders",
+      "id": 12
     }
   }
 }
