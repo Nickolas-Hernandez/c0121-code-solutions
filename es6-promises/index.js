@@ -4,6 +4,6 @@ const myLuck = takeAChance("Nick");
 
 myLuck.then(value => {
   console.log(value);
-}).catch((err) => {
-  console.log(err.message);
+}).catch(error => {
+  console.log(error.message);
 });
