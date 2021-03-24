@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function CustomButton(){
+function CustomButton(props){
   return <button>Click Me!</button>;
 }
 
-ReactDOM.render(CustomButton(), document.getElementById('root'));
+ReactDOM.render(<CustomButton />, document.getElementById('root'));
