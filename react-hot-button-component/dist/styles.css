@@ -1,0 +1,36 @@
+button {
+  width: 5rem;
+  height: 2.5rem;
+  border: 1px solid black;
+  color: white;
+}
+
+.freezing {
+  background-color: rgb(135, 251, 255);
+}
+
+.cold {
+  background-color: rgb(135, 137, 255);
+}
+
+.warm {
+  background-color: rgb(255, 135, 181);
+}
+
+.warmer,
+.hot,
+.nuclear {
+  color: black;
+}
+
+.warmer {
+  background-color: rgb(255, 189, 135);
+}
+
+.hot {
+  background-color: rgb(253, 255, 135);
+}
+
+.nuclear {
+  background-color: white;
+}
