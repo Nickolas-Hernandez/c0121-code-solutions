@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  margin: auto auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#switch {
+  width: 6rem;
+  height: 3rem;
+  background-color: rgb(211, 211, 211);
+  display: inline-block;
+  border-radius: 40px;
+  border: 2px solid rgb(97, 97, 97);
+  position: relative;
+}
+
+#circle {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  border: 1px solid rgb(97, 97, 97);
+  position: absolute;
+}
+
+#switch.active {
+  background-color: rgb(49, 190, 49);
+}
+
+#circle.active {
+  right: 0;
+}
+
+span {
+  margin-left: 1rem;
+  font-size: 24px;
+}
