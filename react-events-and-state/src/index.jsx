@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class CustomButton extends React.Component{
-  constructor(props){
+class CustomButton extends React.Component {
+  constructor(props) {
     super(props);
-    this.state = {isClicked: false}
+    this.state = { isClicked: false };
     this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(){
-    this.setState({isClicked: true})
+
+  handleClick() {
+    this.setState({ isClicked: true });
   }
-  render(){
+
+  render() {
     return (
       <button onClick={(this.handleClick)}>
-        { !this.state.isClicked ? "click me!" : "Yay!"}
+        { !this.state.isClicked ? 'click me!' : 'Yay!'}
       </button>
     );
   }
