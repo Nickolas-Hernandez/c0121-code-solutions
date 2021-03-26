@@ -1,0 +1,27 @@
+.container {
+  font-family: sans-serif;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.container,
+.face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 80px;
+  border: 2px solid black;
+  margin: 1rem;
+  font-size: 32px;
+}
+
+i {
+  font-size: 24px;
+}
