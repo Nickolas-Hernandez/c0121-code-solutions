@@ -22,7 +22,6 @@ class AppDrawer extends React.Component {
           onClick={this.openCloseAppDrawer}
         >
         </i>
-        <div className="menu-container">
           <div
             className={isOpen ? 'shade active' : 'shade'}
             onClick={this.openCloseAppDrawer}
@@ -41,7 +40,6 @@ class AppDrawer extends React.Component {
                 <a href="#">Sign In</a>
               </li>
             </ul>
-          </div>
         </div>
 
       </>
