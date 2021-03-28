@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM, { render } from 'react-dom';
+import ReactDOM from 'react-dom';
+import AppDrawer from './app-drawer';
 
-render(
+ReactDOM.render(
   <AppDrawer />,
-  document.getElementById('root');
-)
+  document.getElementById('root')
+);
