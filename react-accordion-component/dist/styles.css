@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.topic-header,
+.topic-details {
+  width: 420px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.topic-header {
+  height: 40px;
+  cursor: pointer;
+  font-size: 24px;
+  background-color: rgb(168, 195, 245);
+}
+
+.topic-details {
+  padding: 1rem 0.5rem;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  display: none;
+  overflow: hidden;
+}
+
+.topic-details.active {
+  display: block;
+}
