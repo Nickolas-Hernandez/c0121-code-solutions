@@ -71,7 +71,6 @@ export default class App extends React.Component {
      * And specify the "Content-Type" header as "application/json"
      */
     const todos = this.state.todos.slice();
-
     let index;
     for (let i = 0; i < todos.length; i++) {
       if (todos[i].todoId === todoId) {
