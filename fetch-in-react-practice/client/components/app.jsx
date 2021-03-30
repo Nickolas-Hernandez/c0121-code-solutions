@@ -26,7 +26,7 @@ export default class App extends React.Component {
     fetch('/api/todos', { method: 'GET' })
       .then(res => res.json())
       .then(todos => this.setState({ todos }))
-      .catch(err => console.err(err));
+      .catch(err => console.error(err));
   }
 
   addTodo(newTodo) {
@@ -94,7 +94,7 @@ export default class App extends React.Component {
         }
         this.setState(todos);
       })
-      .catch(err => console.err(err));
+      .catch(err => console.error(err));
   }
 
   render() {
