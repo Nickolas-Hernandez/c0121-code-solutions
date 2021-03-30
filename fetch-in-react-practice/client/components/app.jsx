@@ -23,7 +23,7 @@ export default class App extends React.Component {
      * Then 😉, once the response JSON is received and parsed,
      * update state with the received todos.
      */
-    fetch('/api/todos', { method: 'GET' })
+    fetch('/api/todos')
       .then(res => res.json())
       .then(todos => this.setState({ todos }))
       .catch(err => console.error(err));
@@ -38,7 +38,7 @@ export default class App extends React.Component {
     * TIP: Be sure to SERIALIZE the todo object in the body with JSON.stringify()
     * and specify the "Content-Type" header as "application/json"
     */
-    const { todos } = this.state;
+    const todos = this.state.todos.slice();
     const init = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -50,7 +50,7 @@ export default class App extends React.Component {
       })
       .then(todo => {
         todos.push(todo);
-        this.setState(todos);
+        this.setState({ todos: todos });
       })
       .catch(err => console.error(err));
   }
@@ -70,7 +70,7 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    const { todos } = this.state;
+    const todos = this.state.todos.slice();
     const completedStatus = {};
     for (let i = 0; i < todos.length; i++) {
       if (todos[i].todoId === todoId) {
@@ -92,7 +92,7 @@ export default class App extends React.Component {
             break;
           }
         }
-        this.setState(todos);
+        this.setState({ todos: todos });
       })
       .catch(err => console.error(err));
   }
