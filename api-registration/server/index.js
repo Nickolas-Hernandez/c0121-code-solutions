@@ -24,7 +24,8 @@ app.post('/api/auth/sign-up', (req, res, next) => {
     throw new ClientError(400, 'username and password are required fields');
   }
   /* your code starts here */
-  argon2.hash(password)
+  argon2
+    .hash(password)
     .then(hashedPassword => {
       const sql = `
         insert into "users" ("username", "hashedPassword")
@@ -42,7 +43,8 @@ app.post('/api/auth/sign-up', (req, res, next) => {
           res.status(201).json(entry);
         })
         .catch(err => next(err));
-    });
+    })
+    .catch(err => next(err));
   /**
    * Hash the user's password with `argon2.hash()`
    * Then, 😉
