@@ -35,5 +35,3 @@ class Accordion extends React.Component {
 }
 
 export default Accordion;
-
-// define a single topic

@@ -8,8 +8,8 @@ body {
   font-family: sans-serif;
 }
 
-.topic-header,
-.topic-details {
+.topic,
+.topic-text {
   width: 420px;
   border: 1px solid black;
   display: flex;
