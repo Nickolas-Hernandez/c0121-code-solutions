@@ -1,0 +1,81 @@
+User can sign up.
+
+  React starts off by rending an App component
+
+  In this componet, React initializes its state and
+  renders a page depending on the path prop of the
+  route prop of state prop of this object.
+
+  If path = sign-in then a sign in page is rendered
+  If path = '' then a home page is rendered
+
+  once the sign in page is rendered, the client waits for
+  user input.
+
+  Once the user's input is entered(password + username) and submitted,
+  react checks to see if the user is signing up or signing in
+  and sends a fetch request to our server with the users info
+  and appropriate action. In this case, the request will be
+  sent with a sign-up action
+
+  once our server recieves the request, it checks again to
+  ensure valid user input was sent. If not, it throws an error.
+  If it is valid, The server then hashes the users password,
+  creates a sql insert statement and inserts the new user
+  into our database.
+
+  once the database responds, a response is sent back to the client
+  with a 201 created status
+
+  once client recieves the response, it redirects the user to the
+  sign in page.
+
+User can sign in.
+
+  react renders auth page,
+
+  once a user enters their username, password, and hits submit,
+  react sends a fetch request with action = sign-in to our server.
+
+  server then checks to see if valid input was sent. If not,
+  it throws an error. Else it continues to creating
+  a sql select statement and queires our DB to get the users
+  info.
+
+  Once our server recieves a response from our db, the server
+  checks to see if the user exists, if not an error is throw.
+  else the server will verify the user by comapring its password
+  to the users hashed password to ensure the password is valid.
+
+  If the password is not valid, an error is throw. If it is
+  valid, a payload and token are generated and then sent
+  back to the client in the servers response.
+
+  once client recieves the response, the client checks the user
+  and token and if all is valid, Our client will save the
+  jwt to localstorage and set state with the users info.
+
+
+User can stay signed in (even if they refresh the page).
+
+  Since our jwt was saved to local storage in the last step,
+  React uses the componentDidMount method to:
+
+    Add an event listener to listen for hash change events
+    and update state when this changes,
+
+    It also grabs the token from local storage and updates state.
+    State will either have a token or null value for its user property
+    depending on whether there was a token in local storage or
+    not.
+
+  the token being in local storage allows the user to refresh
+  the page and not get signed out.
+
+
+User can sign out.
+
+  When the signout button is entered, react removes the token from
+  local storage and updates state.
+
+  this causes the react to re render the auth page.
