@@ -3,3 +3,5 @@ import React from 'react';
 export default class Carousel extends React.Component {
 
 }
+
+// create render funtion that
