@@ -4,7 +4,6 @@ export default class Accordion extends React.Component {
   constructor(props) {
     super(props);
     this.handleAccordion = this.handleAccordion.bind(this);
-    this.state = { isOpen: false };
   }
 
   handleAccordion(event) {
