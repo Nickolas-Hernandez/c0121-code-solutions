@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Carousel from './carousel.jsx';
+import Carousel from './carousel';
 
 const imageURLs = [
   {
@@ -26,5 +26,6 @@ const imageURLs = [
 ];
 
 ReactDOM.render(
-  <Carousel imagesData={imageURLs} />, document.getElementById('#root')
+  <Carousel imagesData={imageURLs} />,
+  document.getElementById('root')
 );
