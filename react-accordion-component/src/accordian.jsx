@@ -8,8 +8,9 @@ export default class Accordion extends React.Component {
   }
 
   handleAccordion(event) {
-    if (this.state.isOpen) this.setState({ isOpen: false });
-    else this.setState({ isOpen: true });
+    const parent = event.target.closest('.accordion-item');
+    const text = parent.querySelector('.topic-details');
+    text.classList.toggle('active');
   }
 
   render() {
@@ -33,12 +34,8 @@ export default class Accordion extends React.Component {
 function AccordionItem(props) {
   return (
     <div className='accordion-item'>
-        <div className="topic-header">
-          <h4>{props.header}</h4>
-        </div>
-        <div className='topic-details'>
-          <p>{props.text}</p>
-        </div>
-      </div>
+      <h4 className="topic-header">{props.header}</h4>
+      <p className='topic-details'>{props.text}</p>
+    </div>
   );
 }
