@@ -1,14 +1,6 @@
 import React from 'react';
 
-const topics = [
-  {
-    topic: 'Hypertext Markup Language',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ut adipisci ea beatae dolore ad dignissimos voluptatem ratione molestias vel.',
-    key: 1
-  }
-];
-
-class Accordion extends React.Component {
+export default class Accordion extends React.Component {
   constructor(props) {
     super(props);
     this.handleAccordion = this.handleAccordion.bind(this);
@@ -22,16 +14,14 @@ class Accordion extends React.Component {
 
   render() {
     return (
-      <>
+      <div className='accordion-item'>
         <div onClick={this.handleAccordion} className="topic-header">
-          <h4>{}</h4>
+          <h4>{this.props.topics[0].header}</h4>
         </div>
         <div className={this.state.isOpen ? 'topic-details active' : 'topic-details'}>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed ut adipisci ea beatae dolore ad dignissimos voluptatem ratione molestias vel.</p>
+          <p>{this.props.topics[0].text}</p>
         </div>
-      </>
+      </div>
     );
   }
 }
-
-export default Accordion;

@@ -8,6 +8,10 @@ body {
   font-family: sans-serif;
 }
 
+.accordion-item {
+  width: 500px;
+}
+
 .topic,
 .topic-text {
   width: 420px;
@@ -21,6 +25,7 @@ body {
   cursor: pointer;
   font-size: 24px;
   background-color: rgb(168, 195, 245);
+  padding: 5px 10px;
 }
 
 .topic-details {
