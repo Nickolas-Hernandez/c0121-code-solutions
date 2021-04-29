@@ -12,13 +12,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 
 .circle-container {
   align-self: flex-end;
-  margin-bottom: 1rem;
+}
+
+.circle,
+.control-arrow {
+  cursor: pointer;
+  color: #303030;
 }
 
 .circle {
   margin: 0 2px;
+}
+
+.control-arrow {
+  font-size: 36px;
 }
