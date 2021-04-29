@@ -13,15 +13,32 @@ export default class Accordion extends React.Component {
   }
 
   render() {
+    const allItems = this.props.topics.map(topic => {
+      return (
+        <AccordionItem
+          key={topic.key}
+          header={topic.header}
+          text={topic.text}
+          />
+      );
+    });
     return (
-      <div className='accordion-item'>
-        <div onClick={this.handleAccordion} className="topic-header">
-          <h4>{this.props.topics[0].header}</h4>
-        </div>
-        <div className={this.state.isOpen ? 'topic-details active' : 'topic-details'}>
-          <p>{this.props.topics[0].text}</p>
-        </div>
-      </div>
+      <ul className="accordion" onClick={this.handleAccordion}>
+        {allItems}
+      </ul>
     );
   }
+}
+
+function AccordionItem(props) {
+  return (
+    <div className='accordion-item'>
+        <div className="topic-header">
+          <h4>{props.header}</h4>
+        </div>
+        <div className='topic-details'>
+          <p>{props.text}</p>
+        </div>
+      </div>
+  );
 }
