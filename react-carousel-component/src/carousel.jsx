@@ -1,6 +1,10 @@
 import React from 'react';
 
 export default class Carousel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
   render() {
     return (
@@ -18,5 +22,3 @@ export default class Carousel extends React.Component {
     );
   }
 }
-
-// create render funtion that renders basic slide
