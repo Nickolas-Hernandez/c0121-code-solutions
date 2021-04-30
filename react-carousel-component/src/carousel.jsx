@@ -1,4 +1,5 @@
 import React from 'react';
+// import Circles from './circles';
 
 export default class Carousel extends React.Component {
   constructor(props) {
@@ -8,6 +9,10 @@ export default class Carousel extends React.Component {
 
   componentDidMount() {
     this.timerID = setInterval(() => this.forwardMove(), 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
   }
 
   forwardMove() {
@@ -31,13 +36,7 @@ export default class Carousel extends React.Component {
           <Slide image={imagesData[i].relativePath} altText={imagesData[i]} />
         </ul>
         <i className="fas fa-caret-left control-arrow"></i>
-        <div className="circle-container">
-          <i className="far fa-circle circle"></i>
-          <i className="fas fa-circle circle"></i>
-          <i className="fas fa-circle circle"></i>
-          <i className="fas fa-circle circle"></i>
-          <i className="fas fa-circle circle"></i>
-        </div>
+        <Circles data={imagesData} activeIndex={i}/>
         <i className="fas fa-caret-right control-arrow"></i>
       </div>
     );
@@ -47,5 +46,24 @@ export default class Carousel extends React.Component {
 function Slide(props) {
   return (
     <li className="image-wrapper"><img src={props.image} alt={props.altText} /></li>
+  );
+}
+
+function Circles(props) {
+  const circles = props.data.map(circle => {
+    const circleId = props.data.indexOf(circle);
+    return <Circle key={circleId} circleId={circleId} activeCircle={props.activeIndex} />;
+  });
+  return (
+    <div className="circle-container">{circles}</div>
+  );
+}
+
+function Circle(props) {
+  const { circleId, activeCircle } = props;
+  return (
+    <i
+      className={ activeCircle === circleId ? 'far fa-circle circle' : 'fas fa-circle circle'}
+      id={circleId}></i>
   );
 }
