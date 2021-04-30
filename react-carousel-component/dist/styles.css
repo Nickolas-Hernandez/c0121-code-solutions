@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 .carousel {
   width: 600px;
   height: 300px;

@@ -34,6 +34,6 @@ export default class Carousel extends React.Component {
 
 function Slide(props) {
   return (
-    <img src={props.image} alt={props.alt}/>
+    <li><img src={props.image} alt={props.alt} /></li>
   );
 }
