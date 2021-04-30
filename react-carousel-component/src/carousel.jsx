@@ -6,6 +6,7 @@ export default class Carousel extends React.Component {
     this.state = { index: 0 };
     this.forwardMove = this.forwardMove.bind(this);
     this.backwardMove = this.backwardMove.bind(this);
+    this.moveToCircleIndex = this.moveToCircleIndex.bind(this);
   }
 
   componentDidMount() {
@@ -49,6 +50,15 @@ export default class Carousel extends React.Component {
     if (event) this.resetTimer();
   }
 
+  moveToCircleIndex(event) {
+    if (!event.target.classList.contains('circle')) return;
+    const index = parseInt(event.target.id);
+    const updatedState = Object.assign({}, this.state);
+    updatedState.index = index;
+    this.setState(updatedState);
+    this.resetTimer();
+  }
+
   render() {
     const { imagesData } = this.props;
     const { index: i } = this.state;
@@ -59,7 +69,7 @@ export default class Carousel extends React.Component {
         </ul>
         <i className="fas fa-caret-left control-arrow"
            onClick={this.backwardMove}></i>
-        <Circles data={imagesData} activeIndex={i}/>
+        <Circles onClick={this.moveToCircleIndex} data={imagesData} activeIndex={i}/>
         <i className="fas fa-caret-right control-arrow"
            onClick={this.forwardMove}></i>
       </div>
@@ -79,7 +89,7 @@ function Circles(props) {
     return <Circle key={circleId} circleId={circleId} activeCircle={props.activeIndex} />;
   });
   return (
-    <div className="circle-container">{circles}</div>
+    <div onClick={props.onClick} className="circle-container">{circles}</div>
   );
 }
 
