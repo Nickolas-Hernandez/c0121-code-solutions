@@ -3,21 +3,28 @@ import React from 'react';
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { index: 0 };
   }
 
-  createSlides() {
-    const allSlides = this.props.imagesData.map(image => {
-      return <Slide key={image.key} image={image.relativePath} alt={image.alt} />;
-    });
-    return allSlides;
-  }
+  // createSlides() {
+  //   const allSlides = this.props.imagesData.map(image => {
+  //     return <Slide key={image.key} image={image.relativePath} alt={image.alt} />;
+  //   });
+  //   return allSlides;
+  // }
 
   render() {
-    const slides = this.createSlides();
+    // const slides = this.createSlides();
+    const { imagesData } = this.props;
+    console.log(this.props);
+    console.log(this.props);
+
+    const { index: i } = this.state;
     return (
       <div className="carousel">
-        <div className="frame">{slides}</div>
+        <ul className="frame">
+          <Slide image={imagesData[i].relativePath} altText={imagesData[i]} />
+        </ul>
         <i className="fas fa-caret-left control-arrow"></i>
         <div className="circle-container">
           <i className="far fa-circle circle"></i>
@@ -34,6 +41,6 @@ export default class Carousel extends React.Component {
 
 function Slide(props) {
   return (
-    <li><img src={props.image} alt={props.alt} /></li>
+    <li className="image-wrapper"><img src={props.image} alt={props.altText} /></li>
   );
 }
