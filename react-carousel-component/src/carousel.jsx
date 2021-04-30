@@ -5,7 +5,7 @@ export default class Carousel extends React.Component {
     super(props);
     this.state = { index: 0 };
     this.forwardMove = this.forwardMove.bind(this);
-    // this.backwardMove = this.backwardMove.bind(this);
+    this.backwardMove = this.backwardMove.bind(this);
   }
 
   componentDidMount() {
@@ -35,6 +35,20 @@ export default class Carousel extends React.Component {
     if (event) this.resetTimer();
   }
 
+  backwardMove(event) {
+    const updatedState = Object.assign({}, this.state);
+    const length = this.props.imagesData.length;
+    if (updatedState.index === 0) {
+      updatedState.index = length - 1;
+      this.setState(updatedState);
+      if (event) this.resetTimer();
+      return;
+    }
+    updatedState.index--;
+    this.setState(updatedState);
+    if (event) this.resetTimer();
+  }
+
   render() {
     const { imagesData } = this.props;
     const { index: i } = this.state;
@@ -43,10 +57,11 @@ export default class Carousel extends React.Component {
         <ul className="frame">
           <Slide image={imagesData[i].relativePath} altText={imagesData[i]} />
         </ul>
-        <i className="fas fa-caret-left control-arrow"></i>
+        <i className="fas fa-caret-left control-arrow"
+           onClick={this.backwardMove}></i>
         <Circles data={imagesData} activeIndex={i}/>
         <i className="fas fa-caret-right control-arrow"
-        onClick={this.forwardMove}></i>
+           onClick={this.forwardMove}></i>
       </div>
     );
   }
