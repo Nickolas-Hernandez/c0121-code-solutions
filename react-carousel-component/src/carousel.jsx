@@ -1,10 +1,11 @@
 import React from 'react';
-// import Circles from './circles';
 
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = { index: 0 };
+    this.forwardMove = this.forwardMove.bind(this);
+    // this.backwardMove = this.backwardMove.bind(this);
   }
 
   componentDidMount() {
@@ -15,16 +16,23 @@ export default class Carousel extends React.Component {
     clearInterval(this.timerID);
   }
 
-  forwardMove() {
+  resetTimer() {
+    clearInterval(this.timerID);
+    this.timerID = setInterval(() => this.forwardMove(), 3000);
+  }
+
+  forwardMove(event) {
     const updatedState = Object.assign({}, this.state);
     const length = this.props.imagesData.length;
     if (updatedState.index === length - 1) {
       updatedState.index = 0;
       this.setState(updatedState);
+      if (event) this.resetTimer();
       return;
     }
     updatedState.index++;
     this.setState(updatedState);
+    if (event) this.resetTimer();
   }
 
   render() {
@@ -37,7 +45,8 @@ export default class Carousel extends React.Component {
         </ul>
         <i className="fas fa-caret-left control-arrow"></i>
         <Circles data={imagesData} activeIndex={i}/>
-        <i className="fas fa-caret-right control-arrow"></i>
+        <i className="fas fa-caret-right control-arrow"
+        onClick={this.forwardMove}></i>
       </div>
     );
   }
