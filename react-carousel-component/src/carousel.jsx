@@ -6,6 +6,10 @@ export default class Carousel extends React.Component {
     this.state = {};
   }
 
+  createSlide() {
+
+  }
+
   render() {
     return (
       <div className="carousel">
@@ -21,4 +25,10 @@ export default class Carousel extends React.Component {
       </div>
     );
   }
+}
+
+function Slide(props) {
+  return (
+    <li className="frame"><img src={props.image} alt={props.alt}/></li>
+  );
 }
