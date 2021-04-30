@@ -6,13 +6,18 @@ export default class Carousel extends React.Component {
     this.state = {};
   }
 
-  createSlide() {
-
+  createSlides() {
+    const allSlides = this.props.imagesData.map(image => {
+      return <Slide key={image.key} image={image.relativePath} alt={image.alt} />;
+    });
+    return allSlides;
   }
 
   render() {
+    const slides = this.createSlides();
     return (
       <div className="carousel">
+        <div className="frame">{slides}</div>
         <i className="fas fa-caret-left control-arrow"></i>
         <div className="circle-container">
           <i className="far fa-circle circle"></i>
@@ -29,6 +34,6 @@ export default class Carousel extends React.Component {
 
 function Slide(props) {
   return (
-    <li className="frame"><img src={props.image} alt={props.alt}/></li>
+    <img src={props.image} alt={props.alt}/>
   );
 }
