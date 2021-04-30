@@ -6,19 +6,24 @@ export default class Carousel extends React.Component {
     this.state = { index: 0 };
   }
 
-  // createSlides() {
-  //   const allSlides = this.props.imagesData.map(image => {
-  //     return <Slide key={image.key} image={image.relativePath} alt={image.alt} />;
-  //   });
-  //   return allSlides;
-  // }
+  componentDidMount() {
+    this.timerID = setInterval(() => this.forwardMove(), 3000);
+  }
+
+  forwardMove() {
+    const updatedState = Object.assign({}, this.state);
+    const length = this.props.imagesData.length;
+    if (updatedState.index === length - 1) {
+      updatedState.index = 0;
+      this.setState(updatedState);
+      return;
+    }
+    updatedState.index++;
+    this.setState(updatedState);
+  }
 
   render() {
-    // const slides = this.createSlides();
     const { imagesData } = this.props;
-    console.log(this.props);
-    console.log(this.props);
-
     const { index: i } = this.state;
     return (
       <div className="carousel">
