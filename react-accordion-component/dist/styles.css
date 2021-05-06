@@ -8,34 +8,25 @@ body {
   font-family: sans-serif;
 }
 
-.accordion-item {
+.accordion {
   width: 500px;
+  list-style: none;
 }
 
-.topic,
-.topic-text {
-  width: 420px;
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-}
-
-.topic-header {
-  height: 40px;
+.item-header {
+  font-size: 28px;
+  background-color: rgb(216, 18, 18);
+  color: white;
+  padding: 8px 10px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 24px;
-  background-color: rgb(168, 195, 245);
-  padding: 5px 10px;
 }
 
-.topic-details {
-  padding: 1rem 0.5rem;
-  line-height: 1.5;
-  font-size: 1.1rem;
+.item-text {
+  padding: 8px;
   display: none;
-  overflow: hidden;
 }
 
-.topic-details.active {
+.item-text.active {
   display: block;
 }

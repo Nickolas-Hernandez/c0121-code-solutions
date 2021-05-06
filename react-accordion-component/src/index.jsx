@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Accordian from './accordian';
+import Accordion from './accordion';
 
 const topics = [
   {
@@ -21,6 +21,6 @@ const topics = [
 ];
 
 ReactDOM.render(
-  <Accordian topics={topics} />,
+  <Accordion topics={topics} />,
   document.getElementById('root')
 );
